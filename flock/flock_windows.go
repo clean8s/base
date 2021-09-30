@@ -1,5 +1,5 @@
-//go:build !windows
-// +build !windows
+//go:build windows
+// +build windows
 
 package flock
 
@@ -20,7 +20,7 @@ type winlock struct {
 	mu       sync.Mutex
 }
 
-func NewLockPlatformSpecific(path string) T {
+func PlatformSpecificLock(path string) FileLock {
 	return &winlock{path, 0, sync.Mutex{}}
 }
 

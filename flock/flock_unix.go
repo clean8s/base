@@ -1,5 +1,5 @@
-//go:build !windows2
-// +build !windows2
+//go:build !windows
+// +build !windows
 
 package flock
 
@@ -18,7 +18,7 @@ type unixlock struct {
 }
 
 // New creates an object that locks the given path.
-func NewLockPlatformSpecific(path string) T {
+func PlatformSpecificLock(path string) T {
 	return &unixlock{name: path}
 }
 
