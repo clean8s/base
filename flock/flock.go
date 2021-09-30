@@ -9,11 +9,11 @@ import (
 	"context"
 )
 
-type FileLock interface {
+type T interface {
 	Lock(ctx context.Context) (err error)
 	Unlock() error
 }
 
-func New(path string) FileLock {
+func New(path string) T {
 	return NewLockPlatformSpecific(path)
 }
