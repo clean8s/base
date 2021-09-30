@@ -18,7 +18,7 @@ type unixlock struct {
 }
 
 // New creates an object that locks the given path.
-func PlatformSpecificLock(path string) T {
+func PlatformSpecificLock(path string) FileLock {
 	return &unixlock{name: path}
 }
 
